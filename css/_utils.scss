@@ -32,3 +32,14 @@ $old-ie: false !default;
 		@content;
 	}
 }
+
+@mixin leanerSusy($breakpoint, $makeQueryDefault: false){
+	@if $makeQueryDefault and $fix-mqs {
+		@content;
+	}
+	@else {
+		@include at-breakpoint($breakpoint) {
+			@content;
+		}
+	}
+}
